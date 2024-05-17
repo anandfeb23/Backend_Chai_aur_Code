@@ -1,7 +1,7 @@
 //Promise code used as a asyncHandler, its like a func, we don't have to write it again and again now, we can use it anywhere we want now, this code - 
 
 const asyncHandler = (requestHandler)=>{
-    (req, res, next)=> {
+    return (req, res, next)=> {
         Promise.resolve(requestHandler(req,res, next)).
         catch((err) => next(err))
     }
